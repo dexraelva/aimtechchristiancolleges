@@ -28,6 +28,7 @@
 html { scroll-behavior: smooth; }
 
 body {
+  animation: pageFadeIn 0.28s ease both;
   font-family: 'Inter', sans-serif;
   color: var(--dark);
   background: var(--white);
@@ -70,6 +71,56 @@ body {
   margin-bottom: 48px;
 }
 
+
+@keyframes pageFadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.page-tools {
+  background: rgba(248,249,252,0.94);
+  border-bottom: 1px solid var(--border);
+}
+
+.page-tools-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 10px 0;
+}
+
+.page-tools-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.page-tool-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 34px;
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--white);
+  color: var(--royal-blue);
+  font-size: 13px;
+  font-weight: 700;
+  font-family: 'Inter', sans-serif;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.page-tool-btn:hover {
+  background: var(--royal-blue);
+  border-color: var(--royal-blue);
+  color: var(--white);
+  transform: translateY(-1px);
+}
 /* ===== BUTTONS ===== */
 .btn {
   display: inline-flex;
@@ -109,6 +160,23 @@ body {
 
 .btn-sm { padding: 10px 22px; font-size: 13px; }
 
+.nav-cta .btn-sm {
+  padding: 9px 16px;
+  min-height: 38px;
+  white-space: nowrap;
+}
+
+.nav-portal-btn {
+  background: var(--royal-blue);
+  color: var(--white);
+  border: 1px solid var(--royal-blue);
+  box-shadow: 0 4px 14px rgba(26,58,143,0.22);
+}
+.nav-portal-btn:hover {
+  background: var(--sky-blue);
+  border-color: var(--sky-blue);
+}
+
 /* ===== TOPBAR ===== */
 .topbar {
   background: var(--dark);
@@ -119,11 +187,16 @@ body {
 }
 
 .topbar .container {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr auto;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 8px;
+  gap: 18px;
+}
+
+.topbar span {
+  display: inline-flex;
+  align-items: center;
+  line-height: 1.4;
 }
 
 .topbar a { color: var(--gold-light); text-decoration: none; font-weight: 600; }
@@ -143,7 +216,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 14px 0;
+  gap: 20px;
+  padding: 12px 0;
 }
 
 .nav-logo {
@@ -151,11 +225,18 @@ body {
   align-items: center;
   gap: 14px;
   text-decoration: none;
+  flex-shrink: 0;
+  min-width: 270px;
 }
 
 .nav-logo img { width: 60px; height: 60px; object-fit: contain; }
 
-.nav-brand { line-height: 1.25; }
+.nav-brand {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1.15;
+}
 .nav-brand-main {
   display: block;
   font-family: 'Cinzel', serif;
@@ -171,6 +252,7 @@ body {
   font-weight: 600;
   letter-spacing: 2px;
   text-transform: uppercase;
+  margin-top: 4px;
 }
 
 .nav-links {
@@ -178,6 +260,8 @@ body {
   list-style: none;
   gap: 4px;
   align-items: center;
+  justify-content: center;
+  margin-left: auto;
 }
 
 .nav-links a {
@@ -215,7 +299,7 @@ body {
   font-size: 14px;
 }
 
-.nav-cta { display: flex; gap: 10px; align-items: center; }
+.nav-cta { display: flex; gap: 10px; align-items: center; flex-shrink: 0; }
 
 .hamburger {
   display: none;
@@ -322,7 +406,7 @@ body {
 
 .hero h1 {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(36px, 5.5vw, 64px);
+  font-size: clamp(32px, 4.6vw, 54px);
   font-weight: 900;
   line-height: 1.08;
   margin-bottom: 20px;
@@ -332,6 +416,7 @@ body {
 .hero h1 em {
   font-style: normal;
   color: var(--gold-light);
+  white-space: nowrap;
 }
 
 .hero-mission {
@@ -383,18 +468,31 @@ body {
 }
 
 .hero-logo-float {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
+  position: relative;
+  width: min(42vw, 460px);
+  min-width: 340px;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 24px 70px rgba(0,0,0,0.28);
+}
+
+.hero-logo-float::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(145deg, rgba(13,27,62,0.2) 0%, rgba(26,58,143,0.32) 52%, rgba(201,162,39,0.42) 100%),
+    linear-gradient(0deg, rgba(13,27,62,0.82) 0%, rgba(13,27,62,0.08) 52%);
+  z-index: 1;
+  pointer-events: none;
 }
 
 .hero-logo-float img {
-  width: 200px;
-  height: 200px;
-  object-fit: contain;
-  filter: drop-shadow(0 8px 32px rgba(201,162,39,0.4));
-  animation: floatLogo 4s ease-in-out infinite;
+  width: 100%;
+  height: 520px;
+  display: block;
+  object-fit: cover;
+  transform: scale(1.02);
 }
 
 @keyframes floatLogo {
@@ -405,7 +503,17 @@ body {
 .hero-stats {
   display: flex;
   gap: 32px;
-  margin-top: 16px;
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  bottom: 24px;
+  z-index: 2;
+  justify-content: space-between;
+  padding: 18px 20px;
+  background: rgba(13,27,62,0.58);
+  border: 1px solid rgba(255,255,255,0.16);
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
 }
 
 .stat-item { text-align: center; }
@@ -1217,10 +1325,16 @@ footer {
 
 /* ===== MOBILE ===== */
 @media (max-width: 768px) {
-  .section { padding: 56px 0; }
+  .page-tools-inner { align-items: flex-start; flex-direction: column; }
+  .page-tools-actions { width: 100%; }
+  .page-tool-btn { flex: 1; }  .section { padding: 56px 0; }
+  .topbar .container { grid-template-columns: 1fr; gap: 6px; }
+  .topbar span { justify-content: center; text-align: center; }
   .hero { padding: 64px 0 52px; }
   .hero-inner { grid-template-columns: 1fr; gap: 40px; }
-  .hero-logo-float { display: none; }
+  .hero-logo-float { width: 100%; min-width: 0; }
+  .hero-logo-float img { height: 320px; }
+  .hero-stats { left: 16px; right: 16px; bottom: 16px; gap: 14px; padding: 14px; }
   .hero-quick-access { grid-template-columns: 1fr 1fr; max-width: 100%; }
   .about-grid { grid-template-columns: 1fr; gap: 40px; }
   .programs-grid { grid-template-columns: 1fr; }
@@ -1236,6 +1350,7 @@ footer {
   .contact-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .nav-links, .nav-cta { display: none; }
+  .nav-logo { min-width: 0; }
   .hamburger { display: flex; }
   .about-values { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
@@ -1341,7 +1456,7 @@ footer {
   white-space: nowrap;
 }
 
-.accred-badges { display: flex; gap: 24px; flex-wrap: wrap; align-items: center; }
+.accred-badges { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
 
 .accred-badge {
   display: flex;
@@ -1354,9 +1469,90 @@ footer {
   font-size: 13px;
   font-weight: 600;
   color: var(--mid);
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  text-align: left;
+  transition: all 0.2s;
+}
+.accred-badge:hover {
+  border-color: var(--gold);
+  color: var(--royal-blue);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(26,58,143,0.1);
 }
 
 .accred-badge-icon { font-size: 20px; }
+
+.cert-modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(13,27,62,0.72);
+  z-index: 10000;
+}
+.cert-modal.open { display: flex; }
+.cert-modal-panel {
+  width: min(680px, 100%);
+  max-height: min(760px, 90vh);
+  overflow-y: auto;
+  background: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.35);
+}
+.cert-modal-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 24px 28px;
+  background: var(--blue-gradient);
+  color: var(--white);
+}
+.cert-modal-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  line-height: 1.2;
+  color: var(--white);
+}
+.cert-modal-close {
+  width: 38px;
+  height: 38px;
+  border: 1px solid rgba(255,255,255,0.35);
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  color: var(--white);
+  font-size: 22px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.cert-modal-body { padding: 28px; }
+.cert-sample {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--off-white);
+  padding: 14px;
+  margin-bottom: 20px;
+}
+.cert-sample img {
+  width: 100%;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(13,27,62,0.12);
+}
+.cert-summary {
+  display: block;
+  color: var(--dark);
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.cert-note {
+  color: var(--mid);
+  font-size: 14px;
+  line-height: 1.7;
+}
 </style>
 </head>
 <body>
@@ -1384,11 +1580,10 @@ footer {
         <li class="dropdown">
           <a href="programs.html">Programs ▾</a>
           <div class="dropdown-menu">
-            <a href="programs.html">Theology & Biblical Studies</a>
-            <a href="programs.html">Ministry Training</a>
-            <a href="programs.html">Pastoral Leadership</a>
-            <a href="programs.html">Missions & Evangelism</a>
-            <a href="programs.html">Christian Education</a>
+            <a href="programs.html">Bachelor of Theology</a>
+            <a href="programs.html">Bachelor in Christian Education</a>
+            <a href="programs.html">Master in Ministry</a>
+            <a href="programs.html">Doctor of Ministry</a>
           </div>
         </li>
         <li class="dropdown">
@@ -1405,8 +1600,8 @@ footer {
         <li><a href="contact.html">Contact</a></li>
       </ul>
       <div class="nav-cta">
-        <a href="portal.html" class="btn btn-outline-white btn-sm" style="color:var(--royal-blue);border-color:var(--border);">Student Portal</a>
-        <a href="admissions.html" class="btn btn-gold btn-sm">Enroll Now</a>
+        <a href="portal.html" class="btn btn-sm nav-portal-btn">Student Portal</a>
+        <a href="admissions.html" class="btn btn-sm nav-portal-btn">Enroll Now</a>
       </div>
       <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Menu">
         <span></span><span></span><span></span>
@@ -1437,8 +1632,7 @@ footer {
   <div class="container">
     <div class="hero-inner">
       <div class="hero-content">
-        <div class="hero-eyebrow">Established for God's Glory</div>
-        <h1>Equipping <em>Leaders</em><br>for the Kingdom<br>of God</h1>
+        <h1>Preparing Christian<br>Leaders Through<br><em>Biblical Education</em></h1>
         <p class="hero-mission">AIM Tech Christian College provides transformative theological education grounded in Scripture, empowering students to serve God faithfully through ministry, missions, and Christian service.</p>
         <div class="hero-actions">
           <a href="admissions.html" class="btn btn-gold">✦ Enroll Now</a>
@@ -1464,15 +1658,15 @@ footer {
         </div>
       </div>
       <div class="hero-logo-float">
-        <img src="LOGO_SRC_PLACEHOLDER" alt="AIM Tech Christian College Seal">
+        <img src="assets/images/headerphoto.png" alt="AIM Tech Christian College students and campus life">
         <div class="hero-stats">
           <div class="stat-item">
             <span class="stat-num">500+</span>
             <span class="stat-label">Graduates</span>
           </div>
           <div class="stat-item">
-            <span class="stat-num">12+</span>
-            <span class="stat-label">Programs</span>
+            <span class="stat-num">4</span>
+            <span class="stat-label">Courses</span>
           </div>
           <div class="stat-item">
             <span class="stat-num">3</span>
@@ -1488,14 +1682,30 @@ footer {
 <div class="accred-bar">
   <div class="container">
     <div class="accred-inner">
-      <span class="accred-label">Affiliated & Recognized By</span>
+      <span class="accred-label">Accreditations & Affiliations</span>
       <div class="accred-badges">
-        <div class="accred-badge"><span class="accred-badge-icon">🏛️</span> CHED Philippines</div>
-        <div class="accred-badge"><span class="accred-badge-icon">✝️</span> PCEC Member</div>
-        <div class="accred-badge"><span class="accred-badge-icon">🌐</span> ATESEA Affiliate</div>
-        <div class="accred-badge"><span class="accred-badge-icon">📜</span> PAASCU Candidate</div>
-        <div class="accred-badge"><span class="accred-badge-icon">🎓</span> AACCUP Recognized</div>
+        <button class="accred-badge" onclick="openCertModal('Philippine Association of Bible and Theological Schools', 'Sample certification preview for PABATS.', 'Official certification details may be displayed here.')"><span class="accred-badge-icon">📜</span> Philippine Association of Bible and Theological Schools</button>
+        <button class="accred-badge" onclick="openCertModal('Philippine Council of Evangelical Churches', 'Sample certification preview for PCEC.', 'Official certification details may be displayed here.')"><span class="accred-badge-icon">✝️</span> Philippine Council of Evangelical Churches</button>
+        <button class="accred-badge" onclick="openCertModal('International Theological Accreditation Association (ITAA)', 'Sample certification preview for ITAA.', 'Official certification details may be displayed here.')"><span class="accred-badge-icon">🌐</span> International Theological Accreditation Association (ITAA)</button>
+        <button class="accred-badge" onclick="openCertModal('Philippines National Police Chaplain Service', 'Sample certification preview for the Philippines National Police Chaplain Service.', 'Official certification details may be displayed here.')"><span class="accred-badge-icon">🛡️</span> Philippines National Police Chaplain Service</button>
       </div>
+    </div>
+  </div>
+</div>
+
+<!-- CERTIFICATION MODAL -->
+<div class="cert-modal" id="certModal" aria-hidden="true" onclick="closeCertModal(event)">
+  <div class="cert-modal-panel" role="dialog" aria-modal="true" aria-labelledby="certModalTitle">
+    <div class="cert-modal-head">
+      <h3 class="cert-modal-title" id="certModalTitle">Certification</h3>
+      <button class="cert-modal-close" onclick="closeCertModal()" aria-label="Close certification modal">×</button>
+    </div>
+    <div class="cert-modal-body">
+      <div class="cert-sample">
+        <img src="assets/certifications/sample-certification.svg" alt="Sample certification preview">
+      </div>
+      <strong class="cert-summary" id="certModalSummary">Sample certification preview</strong>
+      <p class="cert-note" id="certModalNote">Certification details will appear here.</p>
     </div>
   </div>
 </div>
@@ -1543,11 +1753,9 @@ footer {
         <h5>Programs</h5>
         <ul class="footer-links">
           <li><a href="programs.html">Bachelor of Theology</a></li>
-          <li><a href="programs.html">Diploma in Ministry</a></li>
-          <li><a href="programs.html">Cert. Biblical Studies</a></li>
-          <li><a href="programs.html">Master of Pastoral Ministry</a></li>
-          <li><a href="programs.html">Cert. Missions</a></li>
-          <li><a href="programs.html">Christian Education</a></li>
+          <li><a href="programs.html">Bachelor in Christian Education</a></li>
+          <li><a href="programs.html">Master in Ministry</a></li>
+          <li><a href="programs.html">Doctor of Ministry</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -1623,6 +1831,14 @@ window.addEventListener('scroll', () => {
   btn.classList.toggle('visible', window.scrollY > 400);
 });
 
+
+function goBackOrHome() {
+  if (window.history.length > 1) {
+    window.history.back();
+  } else {
+    window.location.href = 'index.html';
+  }
+}
 function scrollToTop() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
@@ -1650,6 +1866,28 @@ function launchMoodle() {
   window.open('https://moodle.aimtechchristiancollege.com', '_blank');
 }
 
+function openCertModal(title, summary, note) {
+  const modal = document.getElementById('certModal');
+  document.getElementById('certModalTitle').textContent = title;
+  document.getElementById('certModalSummary').textContent = summary;
+  document.getElementById('certModalNote').textContent = note;
+  modal.classList.add('open');
+  modal.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeCertModal(event) {
+  if (event && event.target !== document.getElementById('certModal')) return;
+  const modal = document.getElementById('certModal');
+  modal.classList.remove('open');
+  modal.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+}
+
+window.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') closeCertModal();
+});
+
 // Animate on scroll
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(e => {
@@ -1669,4 +1907,11 @@ document.querySelectorAll('.program-card, .mode-card, .faculty-card, .testimonia
 </script>
 </body>
 </html>
+
+
+
+
+
+
+
 

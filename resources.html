@@ -28,6 +28,7 @@
 html { scroll-behavior: smooth; }
 
 body {
+  animation: pageFadeIn 0.28s ease both;
   font-family: 'Inter', sans-serif;
   color: var(--dark);
   background: var(--white);
@@ -70,6 +71,56 @@ body {
   margin-bottom: 48px;
 }
 
+
+@keyframes pageFadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.page-tools {
+  background: rgba(248,249,252,0.94);
+  border-bottom: 1px solid var(--border);
+}
+
+.page-tools-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 10px 0;
+}
+
+.page-tools-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.page-tool-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 34px;
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--white);
+  color: var(--royal-blue);
+  font-size: 13px;
+  font-weight: 700;
+  font-family: 'Inter', sans-serif;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.page-tool-btn:hover {
+  background: var(--royal-blue);
+  border-color: var(--royal-blue);
+  color: var(--white);
+  transform: translateY(-1px);
+}
 /* ===== BUTTONS ===== */
 .btn {
   display: inline-flex;
@@ -108,6 +159,22 @@ body {
 .btn-blue:hover { background: var(--sky-blue); transform: translateY(-2px); }
 
 .btn-sm { padding: 10px 22px; font-size: 13px; }
+.nav-cta .btn-sm {
+  padding: 9px 16px;
+  min-height: 38px;
+  white-space: nowrap;
+}
+
+.nav-portal-btn {
+  background: var(--royal-blue);
+  color: var(--white);
+  border: 1px solid var(--royal-blue);
+  box-shadow: 0 4px 14px rgba(26,58,143,0.22);
+}
+.nav-portal-btn:hover {
+  background: var(--sky-blue);
+  border-color: var(--sky-blue);
+}
 
 /* ===== TOPBAR ===== */
 .topbar {
@@ -1217,7 +1284,9 @@ footer {
 
 /* ===== MOBILE ===== */
 @media (max-width: 768px) {
-  .section { padding: 56px 0; }
+  .page-tools-inner { align-items: flex-start; flex-direction: column; }
+  .page-tools-actions { width: 100%; }
+  .page-tool-btn { flex: 1; }  .section { padding: 56px 0; }
   .hero { padding: 64px 0 52px; }
   .hero-inner { grid-template-columns: 1fr; gap: 40px; }
   .hero-logo-float { display: none; }
@@ -1384,11 +1453,10 @@ footer {
         <li class="dropdown">
           <a href="programs.html">Programs ▾</a>
           <div class="dropdown-menu">
-            <a href="programs.html">Theology & Biblical Studies</a>
-            <a href="programs.html">Ministry Training</a>
-            <a href="programs.html">Pastoral Leadership</a>
-            <a href="programs.html">Missions & Evangelism</a>
-            <a href="programs.html">Christian Education</a>
+            <a href="programs.html">Bachelor of Theology</a>
+            <a href="programs.html">Bachelor in Christian Education</a>
+            <a href="programs.html">Master in Ministry</a>
+            <a href="programs.html">Doctor of Ministry</a>
           </div>
         </li>
         <li class="dropdown">
@@ -1405,8 +1473,8 @@ footer {
         <li><a href="contact.html">Contact</a></li>
       </ul>
       <div class="nav-cta">
-        <a href="portal.html" class="btn btn-outline-white btn-sm" style="color:var(--royal-blue);border-color:var(--border);">Student Portal</a>
-        <a href="admissions.html" class="btn btn-gold btn-sm">Enroll Now</a>
+        <a href="portal.html" class="btn btn-sm nav-portal-btn">Student Portal</a>
+        <a href="admissions.html" class="btn btn-sm nav-portal-btn">Enroll Now</a>
       </div>
       <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Menu">
         <span></span><span></span><span></span>
@@ -1414,6 +1482,17 @@ footer {
     </div>
   </div>
 </nav>
+<!-- PAGE NAVIGATION TOOLS -->
+<div class="page-tools">
+  <div class="container">
+    <div class="page-tools-inner">
+      <div class="page-tools-actions">
+        <button class="page-tool-btn" type="button" onclick="goBackOrHome()">← Back</button>
+        <a class="page-tool-btn" href="index.html">⌂ Home</a>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- ANNOUNCEMENT BANNER -->
 <div class="announcement">
@@ -1508,11 +1587,9 @@ footer {
         <h5>Programs</h5>
         <ul class="footer-links">
           <li><a href="programs.html">Bachelor of Theology</a></li>
-          <li><a href="programs.html">Diploma in Ministry</a></li>
-          <li><a href="programs.html">Cert. Biblical Studies</a></li>
-          <li><a href="programs.html">Master of Pastoral Ministry</a></li>
-          <li><a href="programs.html">Cert. Missions</a></li>
-          <li><a href="programs.html">Christian Education</a></li>
+          <li><a href="programs.html">Bachelor in Christian Education</a></li>
+          <li><a href="programs.html">Master in Ministry</a></li>
+          <li><a href="programs.html">Doctor of Ministry</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -1588,6 +1665,14 @@ window.addEventListener('scroll', () => {
   btn.classList.toggle('visible', window.scrollY > 400);
 });
 
+
+function goBackOrHome() {
+  if (window.history.length > 1) {
+    window.history.back();
+  } else {
+    window.location.href = 'index.html';
+  }
+}
 function scrollToTop() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
@@ -1634,4 +1719,11 @@ document.querySelectorAll('.program-card, .mode-card, .faculty-card, .testimonia
 </script>
 </body>
 </html>
+
+
+
+
+
+
+
 

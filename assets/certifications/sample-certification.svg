@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="620" viewBox="0 0 900 620" role="img" aria-labelledby="title desc">
+  <title id="title">Sample certification preview</title>
+  <desc id="desc">A decorative sample certificate preview for accreditation modal placeholders.</desc>
+  <defs>
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fffdf5"/>
+      <stop offset="1" stop-color="#f4f7ff"/>
+    </linearGradient>
+    <linearGradient id="rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#1a3a8f"/>
+      <stop offset="0.5" stop-color="#c9a227"/>
+      <stop offset="1" stop-color="#1a3a8f"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="620" rx="24" fill="#0d1b3e"/>
+  <rect x="34" y="34" width="832" height="552" rx="18" fill="url(#paper)" stroke="#c9a227" stroke-width="6"/>
+  <rect x="62" y="62" width="776" height="496" rx="10" fill="none" stroke="#1a3a8f" stroke-width="2"/>
+  <circle cx="450" cy="138" r="58" fill="#1a3a8f"/>
+  <circle cx="450" cy="138" r="44" fill="#c9a227"/>
+  <text x="450" y="150" text-anchor="middle" font-family="Georgia, serif" font-size="42" fill="#0d1b3e" font-weight="700">ATCC</text>
+  <text x="450" y="235" text-anchor="middle" font-family="Georgia, serif" font-size="42" fill="#0d1b3e" font-weight="700">Certificate of Accreditation</text>
+  <rect x="210" y="262" width="480" height="6" fill="url(#rule)"/>
+  <text x="450" y="320" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#3a4a6b">Sample certification preview</text>
+  <text x="450" y="362" text-anchor="middle" font-family="Georgia, serif" font-size="30" fill="#1a3a8f" font-weight="700">AIM Tech Christian College</text>
+  <text x="450" y="410" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#3a4a6b">Official certificate image or details may be displayed here.</text>
+  <line x1="150" y1="494" x2="340" y2="494" stroke="#6b7a99" stroke-width="2"/>
+  <line x1="560" y1="494" x2="750" y2="494" stroke="#6b7a99" stroke-width="2"/>
+  <text x="245" y="524" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#3a4a6b">Authorized Signature</text>
+  <text x="655" y="524" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#3a4a6b">Date Issued</text>
+</svg>
