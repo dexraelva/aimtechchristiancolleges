@@ -1436,14 +1436,13 @@ footer {
   <div class="container">
     <span class="badge">Academic Offerings</span>
     <h2 class="section-title">Programs & <span>Courses</span></h2>
-    <p class="section-sub">Choose from our range of Spirit-filled theological programs designed for every season of ministry life.</p>
+    <p class="section-sub">Choose from the four Christ-centered courses offered for theological study, Christian education, ministry leadership, and advanced ministry practice.</p>
     <div class="programs-tabs">
       <button class="tab-btn active" onclick="filterPrograms('all',this)">All Programs</button>
-      <button class="tab-btn" onclick="filterPrograms('theology',this)">Theology & Bible</button>
-      <button class="tab-btn" onclick="filterPrograms('ministry',this)">Ministry Training</button>
-      <button class="tab-btn" onclick="filterPrograms('pastoral',this)">Pastoral Leadership</button>
-      <button class="tab-btn" onclick="filterPrograms('missions',this)">Missions</button>
+      <button class="tab-btn" onclick="filterPrograms('theology',this)">Theology</button>
       <button class="tab-btn" onclick="filterPrograms('education',this)">Christian Education</button>
+      <button class="tab-btn" onclick="filterPrograms('ministry',this)">Ministry</button>
+      <button class="tab-btn" onclick="filterPrograms('doctoral',this)">Doctoral Ministry</button>
     </div>
     <div class="programs-grid" id="programsGrid">
       <div class="program-card" data-cat="theology">
@@ -1457,50 +1456,6 @@ footer {
         </div>
         <a href="portal.html" class="btn btn-blue btn-sm" style="width:100%;justify-content:center;">Go to Course Dashboard →</a>
       </div>
-      <div class="program-card" data-cat="theology">
-        <div class="program-icon">📜</div>
-        <h3>Certificate in Biblical Studies</h3>
-        <p>Foundational Biblical training for new believers and church workers. Ideal as an entry point.</p>
-        <div class="program-meta">
-          <span class="meta-tag">1 Year</span>
-          <span class="meta-tag modular">Modular</span>
-          <span class="meta-tag online">Online</span>
-        </div>
-        <a href="portal.html" class="btn btn-blue btn-sm" style="width:100%;justify-content:center;">Go to Course Dashboard →</a>
-      </div>
-      <div class="program-card" data-cat="ministry">
-        <div class="program-icon">🎤</div>
-        <h3>Diploma in Ministry Training</h3>
-        <p>Practical hands-on training in preaching, worship leading, discipleship, and church planting.</p>
-        <div class="program-meta">
-          <span class="meta-tag">2 Years</span>
-          <span class="meta-tag onsite">Onsite</span>
-          <span class="meta-tag modular">Modular</span>
-        </div>
-        <a href="portal.html" class="btn btn-blue btn-sm" style="width:100%;justify-content:center;">Go to Course Dashboard →</a>
-      </div>
-      <div class="program-card" data-cat="pastoral">
-        <div class="program-icon">🏛️</div>
-        <h3>Master of Pastoral Ministry</h3>
-        <p>Advanced leadership formation for pastors, elders, and senior church leaders in active ministry.</p>
-        <div class="program-meta">
-          <span class="meta-tag">2 Years</span>
-          <span class="meta-tag online">Online</span>
-          <span class="meta-tag onsite">Onsite</span>
-        </div>
-        <a href="portal.html" class="btn btn-blue btn-sm" style="width:100%;justify-content:center;">Go to Course Dashboard →</a>
-      </div>
-      <div class="program-card" data-cat="missions">
-        <div class="program-icon">🌍</div>
-        <h3>Certificate in Missions & Evangelism</h3>
-        <p>Training for cross-cultural missionaries, evangelists, and church planters in unreached territories.</p>
-        <div class="program-meta">
-          <span class="meta-tag">1 Year</span>
-          <span class="meta-tag modular">Modular</span>
-          <span class="meta-tag online">Online</span>
-        </div>
-        <a href="portal.html" class="btn btn-blue btn-sm" style="width:100%;justify-content:center;">Go to Course Dashboard →</a>
-      </div>
       <div class="program-card" data-cat="education">
         <div class="program-icon">✏️</div>
         <h3>Bachelor in Christian Education</h3>
@@ -1509,6 +1464,28 @@ footer {
           <span class="meta-tag">4 Years</span>
           <span class="meta-tag online">Online</span>
           <span class="meta-tag onsite">Onsite</span>
+        </div>
+        <a href="portal.html" class="btn btn-blue btn-sm" style="width:100%;justify-content:center;">Go to Course Dashboard →</a>
+      </div>
+      <div class="program-card" data-cat="ministry">
+        <div class="program-icon">🎤</div>
+        <h3>Master in Ministry</h3>
+        <p>Advanced ministry formation for pastors, church workers, and ministry leaders serving in local churches and mission fields.</p>
+        <div class="program-meta">
+          <span class="meta-tag">2 Years</span>
+          <span class="meta-tag online">Online</span>
+          <span class="meta-tag onsite">Onsite</span>
+        </div>
+        <a href="portal.html" class="btn btn-blue btn-sm" style="width:100%;justify-content:center;">Go to Course Dashboard →</a>
+      </div>
+      <div class="program-card" data-cat="doctoral">
+        <div class="program-icon">🏛️</div>
+        <h3>Doctor of Ministry</h3>
+        <p>Doctoral-level ministry practice for experienced leaders seeking deeper theological reflection and strategic ministry impact.</p>
+        <div class="program-meta">
+          <span class="meta-tag">3 Years</span>
+          <span class="meta-tag online">Online</span>
+          <span class="meta-tag modular">Modular</span>
         </div>
         <a href="portal.html" class="btn btn-blue btn-sm" style="width:100%;justify-content:center;">Go to Course Dashboard →</a>
       </div>
@@ -1672,3 +1649,4 @@ document.querySelectorAll('.program-card, .mode-card, .faculty-card, .testimonia
 </script>
 </body>
 </html>
+
