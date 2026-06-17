@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AIM Tech Christian College</title>
+<title>Student Portal | AIM Tech Christian College</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600;700&family=Cinzel:wght@700&display=swap" rel="stylesheet">
 <style>
 /* ===== DESIGN TOKENS ===== */
@@ -1431,89 +1431,58 @@ footer {
   </div>
 </div>
 
-<!-- HERO -->
-<section class="hero" id="home">
-  <div class="hero-cross">✝</div>
+<!-- STUDENT PORTAL -->
+<section class="portal-section" id="portal">
   <div class="container">
-    <div class="hero-inner">
-      <div class="hero-content">
-        <div class="hero-eyebrow">Established for God's Glory</div>
-        <h1>Equipping <em>Leaders</em><br>for the Kingdom<br>of God</h1>
-        <p class="hero-mission">AIM Tech Christian College provides transformative theological education grounded in Scripture, empowering students to serve God faithfully through ministry, missions, and Christian service.</p>
-        <div class="hero-actions">
-          <a href="admissions.html" class="btn btn-gold">✦ Enroll Now</a>
-          <a href="programs.html" class="btn btn-outline-white">Explore Programs</a>
+    <div class="portal-grid">
+      <div class="portal-info">
+        <span class="badge">Course Management System</span>
+        <h2>Student Learning Portal</h2>
+        <p>Access your courses, download modules, check grades, and connect with your instructors — all through our Moodle-powered learning management system.</p>
+        <ol class="portal-steps">
+          <li><span class="portal-step-num">1</span> Log in with your student ID and password provided upon enrollment</li>
+          <li><span class="portal-step-num">2</span> Navigate to "My Courses" to access enrolled subjects</li>
+          <li><span class="portal-step-num">3</span> Download study materials, submit assignments, and take quizzes</li>
+          <li><span class="portal-step-num">4</span> Check grades and communicate with your professor via messaging</li>
+        </ol>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:8px;">
+          <a href="index.html" class="btn btn-gold">📄 Download Portal Guide (PDF)</a>
+          <a href="contact.html" class="btn btn-outline-white">Technical Support</a>
         </div>
-        <div class="hero-quick-access">
-          <a href="learning-modes.html" class="quick-btn">
-            <span class="quick-btn-icon">💻</span>
-            <span>Online Learning</span>
-          </a>
-          <a href="learning-modes.html" class="quick-btn">
-            <span class="quick-btn-icon">🏫</span>
-            <span>Onsite Programs</span>
-          </a>
-          <a href="learning-modes.html" class="quick-btn">
-            <span class="quick-btn-icon">📚</span>
-            <span>Modular Learning</span>
-          </a>
-          <a href="portal.html" class="quick-btn">
-            <span class="quick-btn-icon">🔐</span>
-            <span>Student Portal</span>
-          </a>
+        <div class="portal-specs">
+          <div class="spec-item">🖥️ Desktop compatible</div>
+          <div class="spec-item">📱 Mobile-friendly</div>
+          <div class="spec-item">🌐 Requires internet</div>
+          <div class="spec-item">🔒 Secure login</div>
         </div>
       </div>
-      <div class="hero-logo-float">
-        <img src="LOGO_SRC_PLACEHOLDER" alt="AIM Tech Christian College Seal">
-        <div class="hero-stats">
-          <div class="stat-item">
-            <span class="stat-num">500+</span>
-            <span class="stat-label">Graduates</span>
+      <div class="portal-iframe-box">
+        <h3>Moodle LMS Login</h3>
+        <p>Enter your credentials to access the Student Portal. New students receive login details via email after enrollment.</p>
+        <div class="portal-login-box">
+          <h4>🎓 Student Portal Access</h4>
+          <div class="form-group">
+            <label>Student ID / Username</label>
+            <input type="text" placeholder="e.g. ATCC-2025-001">
           </div>
-          <div class="stat-item">
-            <span class="stat-num">12+</span>
-            <span class="stat-label">Programs</span>
+          <div class="form-group">
+            <label>Password</label>
+            <input type="password" placeholder="••••••••">
           </div>
-          <div class="stat-item">
-            <span class="stat-num">3</span>
-            <span class="stat-label">Modes</span>
+          <button class="btn btn-gold" style="width:100%;justify-content:center;" onclick="launchMoodle()">Login to Moodle →</button>
+          <div style="display:flex;justify-content:space-between;margin-top:14px;">
+            <a href="index.html" style="font-size:13px;color:var(--sky-blue);text-decoration:none;">Forgot Password?</a>
+            <a href="admissions.html" style="font-size:13px;color:var(--sky-blue);text-decoration:none;">New Student? Enroll</a>
           </div>
+          <hr style="border:none;border-top:1px solid var(--border);margin:16px 0;">
+          <p style="font-size:12px;color:var(--muted);text-align:center;">Technical issues? Email <strong>info@aimtechchristiancollege.com</strong><br>or call <strong>+63 2 987-6543</strong></p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ACCREDITATION BAR -->
-<div class="accred-bar">
-  <div class="container">
-    <div class="accred-inner">
-      <span class="accred-label">Affiliated & Recognized By</span>
-      <div class="accred-badges">
-        <div class="accred-badge"><span class="accred-badge-icon">🏛️</span> CHED Philippines</div>
-        <div class="accred-badge"><span class="accred-badge-icon">✝️</span> PCEC Member</div>
-        <div class="accred-badge"><span class="accred-badge-icon">🌐</span> ATESEA Affiliate</div>
-        <div class="accred-badge"><span class="accred-badge-icon">📜</span> PAASCU Candidate</div>
-        <div class="accred-badge"><span class="accred-badge-icon">🎓</span> AACCUP Recognized</div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<!-- SITE DIRECTORY -->
-<section class="section">
-  <div class="container">
-    <span class="badge">Explore AIM Tech</span>
-    <h2 class="section-title">Find the Page You <span>Need</span></h2>
-    <p class="section-sub">Each major section now has its own page for easier browsing and sharing.</p>
-    <div class="resources-grid">
-      <div class="resource-card"><span class="resource-icon">🏛️</span><h4>About</h4><p>Learn about the college, our mission, vision, and statement of faith.</p><a href="about.html" class="btn btn-blue btn-sm">Open About</a></div>
-      <div class="resource-card"><span class="resource-icon">📖</span><h4>Programs</h4><p>Review theology, ministry, missions, and Christian education offerings.</p><a href="programs.html" class="btn btn-blue btn-sm">View Programs</a></div>
-      <div class="resource-card"><span class="resource-icon">🎓</span><h4>Admissions</h4><p>See requirements, tuition overview, and the application form.</p><a href="admissions.html" class="btn btn-blue btn-sm">Apply Now</a></div>
-    </div>
-  </div>
-</section><!-- FOOTER -->
+<!-- FOOTER -->
 <footer>
   <div class="container">
     <div class="footer-grid">

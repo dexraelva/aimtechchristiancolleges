@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AIM Tech Christian College</title>
+<title>Contact | AIM Tech Christian College</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600;700&family=Cinzel:wght@700&display=swap" rel="stylesheet">
 <style>
 /* ===== DESIGN TOKENS ===== */
@@ -1431,89 +1431,78 @@ footer {
   </div>
 </div>
 
-<!-- HERO -->
-<section class="hero" id="home">
-  <div class="hero-cross">✝</div>
+<!-- CONTACT -->
+<section class="section" id="contact">
   <div class="container">
-    <div class="hero-inner">
-      <div class="hero-content">
-        <div class="hero-eyebrow">Established for God's Glory</div>
-        <h1>Equipping <em>Leaders</em><br>for the Kingdom<br>of God</h1>
-        <p class="hero-mission">AIM Tech Christian College provides transformative theological education grounded in Scripture, empowering students to serve God faithfully through ministry, missions, and Christian service.</p>
-        <div class="hero-actions">
-          <a href="admissions.html" class="btn btn-gold">✦ Enroll Now</a>
-          <a href="programs.html" class="btn btn-outline-white">Explore Programs</a>
+    <span class="badge">Get in Touch</span>
+    <h2 class="section-title">Contact <span>Us</span></h2>
+    <p class="section-sub">Have questions about admissions, programs, or the student portal? We'd love to hear from you.</p>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>We're Here to Help</h3>
+        <div class="contact-items">
+          <div class="contact-item">
+            <div class="contact-icon-wrap">📍</div>
+            <div><h5>Campus Address</h5><p>123 Ministry Road, Brgy. Faith, Metro Manila, Philippines 1000</p></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon-wrap">📞</div>
+            <div><h5>Phone / WhatsApp</h5><p><a href="tel:+6329876543">+63 2 987-6543</a> &nbsp;|&nbsp; <a href="tel:+639123456789">+63 912 345 6789</a></p></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon-wrap">✉️</div>
+            <div><h5>Email</h5><p><a href="mailto:admission@aimtechchristiancollege.com">admission@aimtechchristiancollege.com</a><br><a href="mailto:info@aimtechchristiancollege.com">info@aimtechchristiancollege.com</a></p></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon-wrap">🕐</div>
+            <div><h5>Office Hours</h5><p>Monday–Friday: 8:00 AM – 5:00 PM<br>Saturday: 8:00 AM – 12:00 PM</p></div>
+          </div>
         </div>
-        <div class="hero-quick-access">
-          <a href="learning-modes.html" class="quick-btn">
-            <span class="quick-btn-icon">💻</span>
-            <span>Online Learning</span>
-          </a>
-          <a href="learning-modes.html" class="quick-btn">
-            <span class="quick-btn-icon">🏫</span>
-            <span>Onsite Programs</span>
-          </a>
-          <a href="learning-modes.html" class="quick-btn">
-            <span class="quick-btn-icon">📚</span>
-            <span>Modular Learning</span>
-          </a>
-          <a href="portal.html" class="quick-btn">
-            <span class="quick-btn-icon">🔐</span>
-            <span>Student Portal</span>
-          </a>
+        <div style="background:var(--off-white);border-radius:12px;height:200px;display:flex;align-items:center;justify-content:center;border:1px solid var(--border);margin-bottom:24px;font-size:40px;color:var(--muted);">🗺️ <span style="font-size:16px;margin-left:12px;color:var(--muted);">Google Map Embed</span></div>
+        <div>
+          <h5 style="font-size:13px;font-weight:700;color:var(--mid);letter-spacing:0.5px;text-transform:uppercase;margin-bottom:12px;">Follow Us</h5>
+          <div class="social-links">
+            <a href="index.html" class="social-btn" title="Facebook">f</a>
+            <a href="index.html" class="social-btn" title="YouTube">▶</a>
+            <a href="index.html" class="social-btn" title="Instagram">📷</a>
+            <a href="index.html" class="social-btn" title="Telegram">✈</a>
+          </div>
         </div>
       </div>
-      <div class="hero-logo-float">
-        <img src="LOGO_SRC_PLACEHOLDER" alt="AIM Tech Christian College Seal">
-        <div class="hero-stats">
-          <div class="stat-item">
-            <span class="stat-num">500+</span>
-            <span class="stat-label">Graduates</span>
+      <div class="contact-form-box">
+        <h3>Send an Inquiry</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Your Name *</label>
+            <input type="text" placeholder="Full name">
           </div>
-          <div class="stat-item">
-            <span class="stat-num">12+</span>
-            <span class="stat-label">Programs</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-num">3</span>
-            <span class="stat-label">Modes</span>
+          <div class="form-group">
+            <label>Email *</label>
+            <input type="email" placeholder="your@email.com">
           </div>
         </div>
+        <div class="form-group">
+          <label>Subject</label>
+          <select>
+            <option>General Inquiry</option>
+            <option>Admissions Question</option>
+            <option>Portal Technical Support</option>
+            <option>Program Information</option>
+            <option>Tuition & Scholarships</option>
+            <option>Faculty Contact</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Message *</label>
+          <textarea rows="5" placeholder="Type your message here..."></textarea>
+        </div>
+        <button class="btn btn-gold" style="width:100%;justify-content:center;font-size:16px;" onclick="sendInquiry()">Send Message →</button>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ACCREDITATION BAR -->
-<div class="accred-bar">
-  <div class="container">
-    <div class="accred-inner">
-      <span class="accred-label">Affiliated & Recognized By</span>
-      <div class="accred-badges">
-        <div class="accred-badge"><span class="accred-badge-icon">🏛️</span> CHED Philippines</div>
-        <div class="accred-badge"><span class="accred-badge-icon">✝️</span> PCEC Member</div>
-        <div class="accred-badge"><span class="accred-badge-icon">🌐</span> ATESEA Affiliate</div>
-        <div class="accred-badge"><span class="accred-badge-icon">📜</span> PAASCU Candidate</div>
-        <div class="accred-badge"><span class="accred-badge-icon">🎓</span> AACCUP Recognized</div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<!-- SITE DIRECTORY -->
-<section class="section">
-  <div class="container">
-    <span class="badge">Explore AIM Tech</span>
-    <h2 class="section-title">Find the Page You <span>Need</span></h2>
-    <p class="section-sub">Each major section now has its own page for easier browsing and sharing.</p>
-    <div class="resources-grid">
-      <div class="resource-card"><span class="resource-icon">🏛️</span><h4>About</h4><p>Learn about the college, our mission, vision, and statement of faith.</p><a href="about.html" class="btn btn-blue btn-sm">Open About</a></div>
-      <div class="resource-card"><span class="resource-icon">📖</span><h4>Programs</h4><p>Review theology, ministry, missions, and Christian education offerings.</p><a href="programs.html" class="btn btn-blue btn-sm">View Programs</a></div>
-      <div class="resource-card"><span class="resource-icon">🎓</span><h4>Admissions</h4><p>See requirements, tuition overview, and the application form.</p><a href="admissions.html" class="btn btn-blue btn-sm">Apply Now</a></div>
-    </div>
-  </div>
-</section><!-- FOOTER -->
+<!-- FOOTER -->
 <footer>
   <div class="container">
     <div class="footer-grid">
