@@ -25,7 +25,7 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
 
 body {
   animation: pageFadeIn 0.28s ease both;
@@ -33,10 +33,12 @@ body {
   color: var(--dark);
   background: var(--white);
   line-height: 1.6;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 /* ===== UTILITY ===== */
-.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 .section { padding: 80px 0; }
 .section-alt { background: var(--off-white); }
 
@@ -175,26 +177,6 @@ body {
   background: var(--sky-blue);
   border-color: var(--sky-blue);
 }
-
-/* ===== TOPBAR ===== */
-.topbar {
-  background: var(--dark);
-  color: rgba(255,255,255,0.75);
-  font-size: 12px;
-  padding: 8px 0;
-  letter-spacing: 0.3px;
-}
-
-.topbar .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.topbar a { color: var(--gold-light); text-decoration: none; font-weight: 600; }
-.topbar a:hover { color: var(--white); }
 
 /* ===== NAVBAR ===== */
 .navbar {
@@ -1286,7 +1268,24 @@ footer {
 @media (max-width: 768px) {
   .page-tools-inner { align-items: flex-start; flex-direction: column; }
   .page-tools-actions { width: 100%; }
-  .page-tool-btn { flex: 1; }  .section { padding: 56px 0; }
+  .page-tool-btn { flex: 1; }
+  .section { padding: 56px 0; }
+  .container { padding: 0 18px; }
+  .nav-inner { gap: 12px; }
+  .nav-logo { max-width: calc(100% - 48px); }
+  .nav-logo img { width: 52px; height: 52px; }
+  .nav-brand { min-width: 0; }
+  .nav-brand-main { font-size: 14px; line-height: 1.15; }
+  .nav-brand-main { white-space: normal; overflow-wrap: break-word; }
+  .hero-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .stat-num { font-size: 24px; }
+  .stat-label { font-size: 10px; }
+  .nav-brand-sub { font-size: 10px; letter-spacing: 1.2px; }
+  .hero h1 em { white-space: normal; }
+  .accred-inner { align-items: flex-start; gap: 14px; }
+  .accred-label { white-space: normal; }
+  .accred-badges { width: 100%; gap: 10px; }
+  .accred-badge { width: 100%; justify-content: flex-start; }
   .hero { padding: 64px 0 52px; }
   .hero-inner { grid-template-columns: 1fr; gap: 40px; }
   .hero-logo-float { display: none; }
@@ -1312,6 +1311,17 @@ footer {
   .hero-stats { gap: 20px; }
 }
 
+
+@media (max-width: 420px) {
+  .container { padding: 0 14px; }
+  .hero h1 { font-size: 30px; }
+  .hero-quick-access { grid-template-columns: 1fr; }
+  .hero-logo-float img { height: 280px; }
+  .hero-stats { left: 10px; right: 10px; bottom: 10px; padding: 10px; gap: 8px; }
+  .quick-btn { min-width: 0; }
+  .page-tools-actions { gap: 6px; }
+  .page-tool-btn { min-width: 0; padding: 8px 10px; }
+}
 /* ===== MOBILE MENU ===== */
 .mobile-menu {
   display: none;
@@ -1429,14 +1439,6 @@ footer {
 </style>
 </head>
 <body>
-<!-- TOPBAR -->
-<div class="topbar">
-  <div class="container">
-    <span>📍 Main Campus: Metro Manila, Philippines &nbsp;|&nbsp; ✉️ admission@aimtechchristiancollege.com</span>
-    <span>📞 <a href="tel:+6329876543">+63 2 987-6543</a> &nbsp;|&nbsp; 🌐 <a href="https://www.aimtechchristiancollege.com">www.aimtechchristiancollege.com</a> &nbsp;|&nbsp; <a href="portal.html">Student Portal Login →</a></span>
-  </div>
-</div>
-
 <!-- NAVBAR -->
 <nav class="navbar">
   <div class="container">
@@ -1474,7 +1476,7 @@ footer {
       </ul>
       <div class="nav-cta">
         <a href="portal.html" class="btn btn-sm nav-portal-btn">Student Portal</a>
-        <a href="admissions.html" class="btn btn-sm nav-portal-btn">Enroll Now</a>
+        <a href="admissions.html" class="btn btn-gold btn-sm">Enroll Now</a>
       </div>
       <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Menu">
         <span></span><span></span><span></span>
@@ -1742,6 +1744,12 @@ document.querySelectorAll('.program-card, .mode-card, .faculty-card, .testimonia
 </script>
 </body>
 </html>
+
+
+
+
+
+
 
 
 
