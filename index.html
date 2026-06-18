@@ -380,44 +380,6 @@ section p { color: #111111 !important; }
 
 .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 52px; }
 
-.hero-quick-access {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-  max-width: 400px;
-}
-
-.quick-btn {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.15);
-  color: var(--white);
-  padding: 14px 18px;
-  border-radius: 10px;
-  cursor: pointer;
-  text-decoration: none;
-  transition: all 0.25s;
-  font-size: 13px;
-  font-weight: 600;
-  backdrop-filter: blur(4px);
-}
-.quick-btn:hover { background: rgba(255,255,255,0.16); border-color: var(--gold); transform: translateY(-2px); }
-
-.quick-btn-icon {
-  width: 36px;
-  height: 36px;
-  background: var(--gold-gradient);
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px;
-  flex-shrink: 0;
-  color: var(--dark);
-}
-
 .hero-logo-float {
   position: relative;
   width: min(42vw, 460px);
@@ -1111,9 +1073,25 @@ section p { color: #111111 !important; }
 .resource-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(26,58,143,0.1); border-color: var(--sky-blue); }
 
 .resource-icon {
-  font-size: 44px;
-  margin-bottom: 16px;
-  display: block;
+  width: 54px;
+  height: 54px;
+  margin: 0 auto 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  background: var(--royal-blue);
+  border-radius: 14px;
+}
+
+.resource-icon svg {
+  width: 26px;
+  height: 26px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .resource-card h4 { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--dark); margin-bottom: 10px; }
@@ -1267,7 +1245,6 @@ footer {
   .hero-inner { grid-template-columns: 1fr; gap: 40px; }
   .hero-logo-float { width: 100%; min-width: 0; }
   .hero-logo-float img { height: 320px; }
-  .hero-quick-access { grid-template-columns: 1fr 1fr; max-width: 100%; }
   .about-grid { grid-template-columns: 1fr; gap: 40px; }
   .programs-grid { grid-template-columns: 1fr; }
   .modes-grid { grid-template-columns: 1fr; }
@@ -1293,9 +1270,7 @@ footer {
 @media (max-width: 420px) {
   .container { padding: 0 14px; }
   .hero h1 { font-size: 30px; }
-  .hero-quick-access { grid-template-columns: 1fr; }
   .hero-logo-float img { height: 280px; }
-  .quick-btn { min-width: 0; }
   .page-tools-actions { gap: 6px; }
   .page-tool-btn { min-width: 0; padding: 8px 10px; }
 }
@@ -1553,24 +1528,6 @@ footer {
           <a href="https://admission.aimtechchristiancollege.com" target="_blank" rel="noopener noreferrer" class="btn btn-gold">✦ Enroll Now</a>
           <a href="programs.html" class="btn btn-outline-white">Explore Programs</a>
         </div>
-        <div class="hero-quick-access">
-          <a href="learning-modes.html" class="quick-btn">
-            <span class="quick-btn-icon">💻</span>
-            <span>Online Learning</span>
-          </a>
-          <a href="learning-modes.html" class="quick-btn">
-            <span class="quick-btn-icon">🏫</span>
-            <span>Onsite Programs</span>
-          </a>
-          <a href="learning-modes.html" class="quick-btn">
-            <span class="quick-btn-icon">📚</span>
-            <span>Modular Learning</span>
-          </a>
-          <a href="portal.html" class="quick-btn">
-            <span class="quick-btn-icon">🔐</span>
-            <span>Student Portal</span>
-          </a>
-        </div>
       </div>
       <div class="hero-logo-float">
         <img src="assets/images/headerphoto.png" alt="AIM Tech Christian College students and campus life">
@@ -1619,9 +1576,9 @@ footer {
     <h2 class="section-title">Find the Page You <span>Need</span></h2>
     <p class="section-sub">Each major section now has its own page for easier browsing and sharing.</p>
     <div class="resources-grid">
-      <div class="resource-card"><span class="resource-icon">🏛️</span><h4>About</h4><p>Learn about the college, our mission, vision, and statement of faith.</p><a href="about.html" class="btn btn-blue btn-sm">Open About</a></div>
-      <div class="resource-card"><span class="resource-icon">📖</span><h4>Programs</h4><p>Review the four offered programs in theology, Christian education, ministry, and doctoral ministry.</p><a href="programs.html" class="btn btn-blue btn-sm">View Programs</a></div>
-      <div class="resource-card"><span class="resource-icon">🎓</span><h4>Admissions</h4><p>See admission requirements and open the application portal.</p><a href="https://admission.aimtechchristiancollege.com" target="_blank" rel="noopener noreferrer" class="btn btn-blue btn-sm">Apply Now</a></div>
+      <div class="resource-card"><span class="resource-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 18h14M6 9v7M10 9v7M14 9v7M18 9v7M3 7l9-5 9 5H3Z"></path></svg></span><h4>About</h4><p>Learn about the college, our mission, vision, and statement of faith.</p><a href="about.html" class="btn btn-blue btn-sm">Open About</a></div>
+      <div class="resource-card"><span class="resource-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 5.5A3.5 3.5 0 0 1 6.5 2H11v18H6.5A3.5 3.5 0 0 0 3 23V5.5Z"></path><path d="M21 5.5A3.5 3.5 0 0 0 17.5 2H13v18h4.5A3.5 3.5 0 0 1 21 23V5.5Z"></path></svg></span><h4>Programs</h4><p>Review the four offered programs in theology, Christian education, ministry, and doctoral ministry.</p><a href="programs.html" class="btn btn-blue btn-sm">View Programs</a></div>
+      <div class="resource-card"><span class="resource-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m3 10 9-5 9 5-9 5-9-5Z"></path><path d="M7 13v4c3 2 7 2 10 0v-4M21 10v6"></path></svg></span><h4>Admissions</h4><p>See admission requirements and open the application portal.</p><a href="https://admission.aimtechchristiancollege.com" target="_blank" rel="noopener noreferrer" class="btn btn-blue btn-sm">Apply Now</a></div>
     </div>
   </div>
 </section><!-- FOOTER -->
@@ -1661,12 +1618,10 @@ footer {
       <div class="footer-col">
         <h5>Learning & Support</h5>
         <ul class="footer-links">
-          <li><a href="learning-modes.html">Online Learning</a></li>
-          <li><a href="learning-modes.html">Onsite Classes</a></li>
-          <li><a href="learning-modes.html">Modular Learning</a></li>
+          <li><a href="learning-modes.html">Modes of Learning</a></li>
           <li><a href="resources.html">Resource Library</a></li>
           <li><a href="contact.html">Technical Support</a></li>
-          <li><a href="index.html">Download Prospectus</a></li>
+          <li><a href="assets/documents/Aimtech_Christian_College_Prospectus_2026.pdf" download="Aimtech_Christian_College_Prospectus_2026.pdf">Download Prospectus</a></li>
         </ul>
       </div>
     </div>
