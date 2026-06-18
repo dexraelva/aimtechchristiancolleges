@@ -29,6 +29,7 @@ html { scroll-behavior: smooth; overflow-x: hidden; }
 
 body {
   animation: pageFadeIn 0.28s ease both;
+  padding-top: 91px;
   font-family: 'Inter', sans-serif;
   color: var(--dark);
   background: var(--white);
@@ -75,8 +76,8 @@ body {
 
 
 @keyframes pageFadeIn {
-  from { opacity: 0; transform: translateY(6px); }
-  to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 .page-tools {
@@ -182,8 +183,11 @@ body {
 .navbar {
   background: var(--white);
   border-bottom: 3px solid var(--gold);
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
   z-index: 999;
   box-shadow: 0 2px 20px rgba(0,0,0,0.1);
 }

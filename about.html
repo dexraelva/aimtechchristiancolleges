@@ -29,6 +29,7 @@ html { scroll-behavior: smooth; overflow-x: hidden; }
 
 body {
   animation: pageFadeIn 0.28s ease both;
+  padding-top: 91px;
   font-family: 'Inter', sans-serif;
   color: var(--dark);
   background: var(--white);
@@ -75,8 +76,8 @@ body {
 
 
 @keyframes pageFadeIn {
-  from { opacity: 0; transform: translateY(6px); }
-  to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 .page-tools {
@@ -182,8 +183,11 @@ body {
 .navbar {
   background: var(--white);
   border-bottom: 3px solid var(--gold);
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
   z-index: 999;
   box-shadow: 0 2px 20px rgba(0,0,0,0.1);
 }
@@ -1467,37 +1471,13 @@ footer {
         <div class="about-img-main">
           <img src="LOGO_SRC_PLACEHOLDER" alt="AIM Tech Christian College">
         </div>
-        <div class="about-badge-float">
-          <span class="big">25+</span>
-          <span class="small">Years of Ministry Education</span>
-        </div>
       </div>
       <div class="about-content">
         <span class="badge">About the College</span>
-        <h2 class="section-title">Faith-Based Education<br>for <span>Transformative Ministry</span></h2>
-        <p class="section-sub">AIM Tech Christian College has been shaping ministry leaders since its founding, offering rigorous theological education rooted in the Word of God and empowered by the Holy Spirit.</p>
-        <p style="font-size:15px;color:var(--mid);line-height:1.75;margin-bottom:24px;">Our institution stands on the conviction that academic excellence and spiritual formation are inseparable. We prepare students for real-world ministry through comprehensive Biblical studies, practical training, and holistic Christian character development.</p>
-        <div class="about-values">
-          <div class="value-item">
-            <span class="value-icon">📖</span>
-            <div><div class="value-text">Scripture-Centered</div><div class="value-desc">Bible as supreme authority</div></div>
-          </div>
-          <div class="value-item">
-            <span class="value-icon">🙏</span>
-            <div><div class="value-text">Prayer-Grounded</div><div class="value-desc">Spirit-led community</div></div>
-          </div>
-          <div class="value-item">
-            <span class="value-icon">🌍</span>
-            <div><div class="value-text">Mission-Focused</div><div class="value-desc">Global Great Commission</div></div>
-          </div>
-          <div class="value-item">
-            <span class="value-icon">🤝</span>
-            <div><div class="value-text">Service-Oriented</div><div class="value-desc">Servant leadership model</div></div>
-          </div>
-        </div>
+        <h2 class="section-title">Equipping Servants.<br>Planting Churches.<br><span>Reaching the Nations.</span></h2>
+        <p class="section-sub">Aimtech Christian College Inc. exists to provide Christian values, quality education, and practical training that prepare students for ministry, leadership, and service. Through biblical instruction, theological formation, and skills-based education, Aimtech equips students to serve God faithfully in the church, community, workplace, and mission field.</p>
         <div style="margin-top:28px;display:flex;gap:12px;flex-wrap:wrap;">
-          <a href="about.html" class="btn btn-blue">Our Full Story</a>
-          <a href="about.html" class="btn" style="background:var(--off-white);color:var(--mid);border:1px solid var(--border);">Statement of Faith</a>
+          <a href="our-story.html" class="btn btn-blue">Our Full Story</a>
         </div>
       </div>
     </div>
@@ -1515,17 +1495,18 @@ footer {
       <div style="background:var(--white);border-radius:16px;padding:36px;border:1px solid var(--border);border-top:4px solid var(--gold);text-align:center;">
         <div style="font-size:48px;margin-bottom:16px;">🎯</div>
         <h3 style="font-family:'Playfair Display',serif;font-size:22px;color:var(--dark);margin-bottom:14px;">Our Mission</h3>
-        <p style="font-size:14px;color:var(--muted);line-height:1.75;">To provide quality, Christ-centered theological education that equips believers for effective ministry, faithful service, and transformative impact in the Church and society.</p>
+        <p style="font-size:14px;color:var(--muted);line-height:1.75;">To provide Christian values and quality education, and to elevate students’ knowledge, skills, and attitudes through technology, in order to provide a strong foundation for their future fields of specialization and ministry.</p>
       </div>
       <div style="background:var(--royal-blue);border-radius:16px;padding:36px;text-align:center;color:var(--white);">
         <div style="font-size:48px;margin-bottom:16px;">🔭</div>
         <h3 style="font-family:'Playfair Display',serif;font-size:22px;color:var(--gold-light);margin-bottom:14px;">Our Vision</h3>
-        <p style="font-size:14px;color:rgba(255,255,255,0.8);line-height:1.75;">To be a leading Christian institution that raises up an army of godly leaders who will advance the Kingdom of God across the Philippines and the nations.</p>
+        <p style="font-size:14px;color:rgba(255,255,255,0.8);line-height:1.75;">Aimtech Christian College aims to establish a learning institution committed to discovering and training students to enhance their competitiveness in Technology, Economy, Christian Culture, and Humanity, so they may assume leadership positions here and abroad.</p>
       </div>
       <div style="background:var(--white);border-radius:16px;padding:36px;border:1px solid var(--border);border-top:4px solid var(--sky-blue);text-align:center;">
         <div style="font-size:48px;margin-bottom:16px;">✝️</div>
         <h3 style="font-family:'Playfair Display',serif;font-size:22px;color:var(--dark);margin-bottom:14px;">Statement of Faith</h3>
-        <p style="font-size:14px;color:var(--muted);line-height:1.75;">We believe in the Triune God, the infallibility of Scripture, salvation through faith in Jesus Christ, the indwelling of the Holy Spirit, and the Second Coming of our Lord.</p>
+        <p style="font-size:14px;color:var(--muted);line-height:1.75;margin-bottom:22px;">Aimtech Christian College holds to the foundational doctrines of historic Evangelical Christianity.</p>
+        <a href="statement-of-faith.html" class="btn btn-blue">Read Our Statement of Faith</a>
       </div>
     </div>
   </div>
@@ -1585,7 +1566,7 @@ footer {
       <span>
         <a href="index.html">Privacy Policy</a> &nbsp;·&nbsp;
         <a href="index.html">Terms of Use</a> &nbsp;·&nbsp;
-        <a href="index.html">Statement of Faith</a>
+        <a href="statement-of-faith.html">Statement of Faith</a>
       </span>
     </div>
   </div>
