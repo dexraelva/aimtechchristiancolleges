@@ -1441,6 +1441,98 @@ footer {
   font-size: 14px;
   line-height: 1.7;
 }
+
+.enrollment-modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(13,27,62,0.68);
+  z-index: 10050;
+}
+.enrollment-modal.open { display: flex; }
+.enrollment-modal-panel {
+  width: min(560px, 100%);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.24);
+  border-radius: 12px;
+  background:
+    linear-gradient(135deg, rgba(13,27,62,0.92) 0%, rgba(26,58,143,0.78) 58%, rgba(46,127,212,0.56) 100%),
+    url("assets/images/modal.svg") center right / cover no-repeat;
+  color: var(--white);
+  box-shadow: 0 24px 80px rgba(0,0,0,0.35);
+  cursor: pointer;
+}
+.enrollment-modal-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(201,162,39,0.22) 0%, transparent 34%),
+    radial-gradient(circle at 88% 10%, rgba(255,255,255,0.14) 0%, transparent 30%);
+  pointer-events: none;
+}
+.enrollment-modal-content {
+  position: relative;
+  padding: 34px;
+}
+.enrollment-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(255,255,255,0.35);
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  color: var(--white);
+  font-size: 22px;
+  cursor: pointer;
+}
+.enrollment-modal-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border: 1px solid rgba(201,162,39,0.45);
+  border-radius: 999px;
+  background: rgba(201,162,39,0.16);
+  color: var(--gold-light);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+.enrollment-modal-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(30px, 5vw, 46px);
+  line-height: 1.05;
+  color: var(--white);
+  margin-bottom: 14px;
+}
+.enrollment-modal-text {
+  color: rgba(255,255,255,0.84);
+  font-size: 17px;
+  line-height: 1.65;
+  max-width: 440px;
+  margin-bottom: 24px;
+}
+.enrollment-modal-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 12px 20px;
+  border-radius: 999px;
+  background: var(--gold);
+  color: var(--navy);
+  font-weight: 800;
+  box-shadow: 0 10px 30px rgba(201,162,39,0.28);
+}
 </style>
 </head>
 <body>
@@ -1533,6 +1625,19 @@ footer {
       </div>
       <strong class="cert-summary" id="certModalSummary">Sample certification preview</strong>
       <p class="cert-note" id="certModalNote">Certification details will appear here.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ENROLLMENT MODAL -->
+<div class="enrollment-modal" id="enrollmentModal" aria-hidden="true" onclick="closeEnrollmentModal(event)">
+  <div class="enrollment-modal-panel" role="dialog" aria-modal="true" aria-labelledby="enrollmentModalTitle" onclick="goToAdmissions()">
+    <button class="enrollment-modal-close" onclick="closeEnrollmentModal(event)" aria-label="Close enrollment modal">×</button>
+    <div class="enrollment-modal-content">
+      <span class="enrollment-modal-kicker">Ongoing Enrollment</span>
+      <h3 class="enrollment-modal-title" id="enrollmentModalTitle">Enrollment is now open</h3>
+      <p class="enrollment-modal-text">Begin your AIM Tech Christian College application and take the next step in your ministry preparation.</p>
+      <span class="enrollment-modal-action">Go to Admissions</span>
     </div>
   </div>
 </div>
@@ -1693,8 +1798,55 @@ function closeCertModal(event) {
   document.body.style.overflow = '';
 }
 
+function markEnrollmentModalSeen() {
+  try {
+    sessionStorage.setItem('atccEnrollmentModalSeen', 'true');
+  } catch (error) {
+    window.atccEnrollmentModalSeen = true;
+  }
+}
+
+function hasSeenEnrollmentModal() {
+  try {
+    return sessionStorage.getItem('atccEnrollmentModalSeen') === 'true';
+  } catch (error) {
+    return window.atccEnrollmentModalSeen === true;
+  }
+}
+
+function openEnrollmentModal() {
+  const modal = document.getElementById('enrollmentModal');
+  if (!modal || hasSeenEnrollmentModal()) return;
+  markEnrollmentModalSeen();
+  modal.classList.add('open');
+  modal.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeEnrollmentModal(event) {
+  if (event) {
+    event.stopPropagation();
+    if (event.target !== document.getElementById('enrollmentModal') && !event.target.classList.contains('enrollment-modal-close')) return;
+  }
+  const modal = document.getElementById('enrollmentModal');
+  if (!modal) return;
+  modal.classList.remove('open');
+  modal.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+}
+
+function goToAdmissions() {
+  markEnrollmentModalSeen();
+  window.location.href = 'admissions/';
+}
+
+window.addEventListener('DOMContentLoaded', openEnrollmentModal);
+
 window.addEventListener('keydown', (event) => {
-  if (event.key === 'Escape') closeCertModal();
+  if (event.key === 'Escape') {
+    closeCertModal();
+    closeEnrollmentModal();
+  }
 });
 
 // Animate on scroll
